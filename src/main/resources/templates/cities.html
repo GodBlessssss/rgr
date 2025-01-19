@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Міста</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Міста</h1>
+				<div th:if="${isAdmin}">
+        <a href="/cities/add" class="button">Додати місто</a>
+			</div>
+			<div th:if="${!isAdmin}" class="warning-message">
+				<p style= "color: #b61d1d;" >Ви перебуваєте в режимі перегляду. Для внесення змін потрібні права адміністратора.</p>
+		</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Номер у списку</th>
+                    <th>Місто</th>
+                    <th>Чисельність населення</th>
+                    <th>Регіон</th>
+                    <th th:if="${isAdmin}">Дії</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="city : ${cities}">
+                    <td th:text="${city.CityId}"></td>
+                    <td th:text="${city.cityName}"></td>
+                    <td th:text="${city.population}"></td>
+                    <td th:text="${city.region}"></td>
+                    <td th:if="${isAdmin}" class="actions">
+                        <a th:href="@{/cities/edit/{id}(id=${city.CityId})}" class="button edit">Редагувати</a>
+                        <a th:href="@{/cities/delete/{id}(id=${city.CityId})}" class="button delete">Видалити</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/home" class="button back">Повернутися на головну сторінку</a>
+    </div>
+</body>
+</html>

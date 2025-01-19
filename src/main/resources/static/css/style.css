@@ -1,0 +1,204 @@
+/* Загальні стилі */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background: linear-gradient(135deg, #ffe082, #81d4fa); /* Жовто-блакитний фон */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Контейнер */
+.container {
+    max-width: 1200px;
+    margin: 20px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid #4fc3f7; /* Блакитний акцент */
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    color: #fbc02d; /* Жовтий акцент */
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2, h3 {
+    font-size: 2rem;
+}
+
+/* Таблиці */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e1f5fe; /* Світло-блакитний фон таблиці */
+    font-size: 1rem;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 15px;
+    border-bottom: 1px solid #b3e5fc; /* Тонка лінія */
+}
+
+table th {
+    background: #0288d1; /* Блакитний заголовок */
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background: #fff9c4; /* Світло-жовтий рядок */
+}
+
+table tr:hover {
+    background: #ffe082; /* Жовтий підсвіт при наведенні */
+    transition: background 0.3s ease;
+}
+
+/* Стилі для великих таблиць */
+table.large-table th,
+table.large-table td {
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+table.large-table th {
+    font-size: 1.4rem;
+}
+
+/* Форма */
+.form-container {
+    margin-top: 20px;
+    padding: 30px;
+    background: linear-gradient(135deg, #fff9c4, #b3e5fc); /* Жовто-блакитний градієнт */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #4fc3f7; /* Блакитний акцент */
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #fbc02d; /* Жовтий акцент при фокусі */
+    box-shadow: 0 0 10px rgba(251, 192, 45, 0.4);
+    outline: none;
+}
+
+/* Кнопки */
+.button {
+    display: inline-block;
+    background: #0288d1; /* Блакитний фон */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #0277bd; /* Темніший блакитний при наведенні */
+    transform: translateY(-3px);
+}
+
+/* Навігація */
+.navigation {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navigation a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #fbc02d; /* Жовтий фон */
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.navigation a:hover {
+    background: #f9a825; /* Темніший жовтий при наведенні */
+    transform: translateY(-3px);
+}
+
+/* Адаптивність */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2, h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table th,
+    table td {
+        font-size: 0.9rem;
+    }
+
+    table.large-table th,
+    table.large-table td {
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        padding: 10px 25px;
+    }
+}
+

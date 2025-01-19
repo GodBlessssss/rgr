@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Управління продажами оргтехніки</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <style>
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-content">
+            <h1>Ласкаво просимо до управління продажами оргтехніки</h1>
+            <h2>Легко керуйте містами, магазинами та продуктами</h2>
+        </div>
+
+        <div class="center-content">
+            <div th:unless="${username}" class="login-link">
+                <a th:href="@{/login}" class="button">Вхід</a>
+            </div>
+            <div th:if="${username}" class="user-info" style="text-align: center;">
+                <p style="font-size: 1.2rem; font-weight: 500; color: #4a267c;">
+                    Ласкаво просимо, <span th:text="${username}"></span>
+                </p>
+                <form th:action="@{/logout}" method="post" style="display: inline;">
+                    <button type="submit" class="button delete">Вихід</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="divider" style="text-align: center; margin: 20px 0;">
+            <span>або</span>
+        </div>
+
+        <div class="navigation" style="text-align: center;">
+            <a th:href="@{/cities}" class="button">Міста</a>
+            <a th:href="@{/shops}" class="button">Магазини</a>
+            <a th:href="@{/products}" class="button">Товари</a>
+        </div>
+    </div>
+</body>
+</html>

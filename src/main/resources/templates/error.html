@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Помилка 401 - Неавторизований</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+       
+        <div class="header" style="margin-bottom: 30px; display: flex; justify-content: center; align-items: center;">
+            <h1 style="color: #d9534f; font-size: 2rem;">Помилка 401 - неавторизований користувач</h1>
+        </div>
+
+       
+        <h2 style="color: #555; font-size: 1.5rem; margin-bottom: 20px;">
+            Ви неавторизовані, щоб дивитися цю сторінку.
+        </h2>
+        <p style="color: #777; font-size: 1rem; margin-bottom: 30px;">
+            Будь ласка, увійдіть, щоб отримати доступ або повернутися на головну сторінку.
+        </p>
+
+        
+        <div class="navigation">
+            <a th:href="@{/login}" class="button" style="margin-right: 10px;">Вхід</a>
+            <a th:href="@{/}" class="button">Головна сторінка</a>
+        </div>
+    </div>
+</body>
+</html>

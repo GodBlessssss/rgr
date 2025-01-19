@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Помилка 401 - Недійсні облікові дані</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+       
+        <div class="header" style="margin-bottom: 30px; display: flex; justify-content: center; align-items: center;">
+            <h1 style="color: #d9534f; font-size: 2rem;">Помилка 401 - Недійсні облікові дані</h1>
+        </div>
+
+        
+        <h2 style="color: #555; font-size: 1.5rem; margin-bottom: 20px;">
+            Невірний логін або пароль.
+        </h2>
+        <p style="color: #777; font-size: 1rem; margin-bottom: 30px;">
+            Перевірте своє ім'я користувача та пароль і повторіть спробу.
+        </p>
+
+       
+        <div class="navigation">
+            <a th:href="@{/login}" class="button" style="margin-right: 10px;">Спробувати знову</a>
+            <a th:href="@{/}" class="button">Головна сторінка</a>
+        </div>
+    </div>
+</body>
+</html>
